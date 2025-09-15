@@ -4,6 +4,8 @@ function file
 sep 15 2025
 lab 5, function
 """
+import random
+
 # example 1: define a function that passes two numbers and return the product of it
 def product(a=0,b=0):
     c = a*b
@@ -42,3 +44,14 @@ def check_pass(avg_grade):
         return False
     
     #LAB EXERCISE
+
+def random_number(min, max):
+    return random.randint(min, max)
+
+def compare_guess(rand, guess):
+    if rand < guess:
+        print("The number is smaller than the guess number")
+    elif rand > guess:
+        print("The number is bigger than the guess number")
+    else:
+        print("You got it!")

@@ -49,3 +49,8 @@ print(f"Did I pass the class? {check_grades(grades)}")
 grades = [50, 60, 30, 50]
 avg = check_grades(grades)
 print(f"Did I pass the class? {check_grades(grades)}")
+
+print("\n----- lab exercise -----")
+guess = 7
+rand = random_number(1, 10)
+compare_guess(rand, guess)
