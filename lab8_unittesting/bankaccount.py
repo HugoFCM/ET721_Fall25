@@ -1,22 +1,21 @@
 class BankAccount:
-    def __init__(self, account_number, account_holder):
-        self.account_number = account_number
-        self.account_holder = account_holder
-        self.balance = 0.0
+    def __init__(self, owner, balance=0):
+        self.owner = owner
+        self.balance = balance
 
     def deposit(self, amount):
-        if amount < 0:
-            raise ValueError("amount must be positive")
+        if amount <= 0:
+            raise ValueError("Deposit amount must be positive!")
         self.balance += amount
-        return self.balance
 
     def withdraw(self, amount):
-        if amount < 0:
-            raise ValueError("amount must be positive")
         if amount > self.balance:
-            raise ValueError("not enough funds in account")
+            raise ValueError("Insufficient funds for this withdrawal!")
+
+        if amount <= 0:
+            raise ValueError("Withdrawal amount must be positive!")
+
         self.balance -= amount
-        return self.balance
 
     def get_balance(self):
         return self.balance
