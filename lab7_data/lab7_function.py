@@ -14,21 +14,22 @@ def read_data(filename):
 
 def email_read():
     try:
-        with open("user_email.txt", "r") as infile:
-            gmail_count = 0
-            yahoo_count = 0
-            hotmail_count = 0
-            for line in infile:
-                email = line.strip().lower()
-                if "@gmail" in email:
-                    gmail_count += 1
-                elif "@yahoo" in email:
-                    yahoo_count += 1
-                elif "@hotmail" in email:
-                    hotmail_count += 1
-        with open("reportemail.txt", "w") as outfile:
-            outfile.write(f"gmail = {gmail_count}\n")
-            outfile.write(f"yahoo = {yahoo_count}\n")
-            outfile.write(f"hotmail = {hotmail_count}\n")
+        fileuser = open("user_email.txt", "r")
+        gmail = 0
+        yahoo = 0
+        hotmail = 0
+        for each in fileuser:
+            if "@gmail" in each:
+                gmail += 1
+            elif "@yahoo" in each:
+                yahoo += 1
+            elif "@hotmail" in each:
+                hotmail += 1
+        fileuser.close()
+        report = open("reportemail.txt", "w")
+        report.write("gmail = " + str(gmail) + "\n")
+        report.write("yahoo = " + str(yahoo) + "\n")
+        report.write("hotmail = " + str(hotmail) + "\n")
+        report.close()
     except:
-        print("Error reading file")
+        print("error reading file")

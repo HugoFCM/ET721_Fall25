@@ -10,3 +10,5 @@ print("\n ---- example1: reading file ----")
 with open('phrases.txt', 'r') as fileuser:
     eachline = fileuser.readlines()
     print(eachline)
+
+email_read()
