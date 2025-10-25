@@ -11,7 +11,7 @@ class TestFileOperations(unittest.TestCase):
     def setUp(self):
         # set up temperary test file name before each test
         self.filename = "test_file.txt"
-        self.msg = "Henry Perez"
+        self.msg = "Hugo Carcamo"
 
     def tearDown(self):
         # remove the test file after each test
@@ -20,7 +20,7 @@ class TestFileOperations(unittest.TestCase):
         
     def test_write_file(self):
         # test writing text to a file
-        msg = "Henry Perez"
+        msg = "Hugo Carcamo"
         with open(self.filename, "w") as f:
             f.write(msg)
 
