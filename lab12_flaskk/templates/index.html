@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask by Hugo Carcamo</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+</head>
+<body>
+    <h1 class="title">Welcome to Flask Application</h1>
+    <h2 class="subtitle">By: {{username}}</h2>
+    <div class="introimg">
+        <img src="../static/img1.jpg" alt="image">
+    </div>
+
+    <h1>Jinja engine</h1>
+    <!-- for loop -->
+     <ul>
+        {% for eachfruit in fruits_list %}
+            <li>{{eachfruit}}</li>
+        {% endfor %}
+     </ul>
+
+     <!-- Conditional statement -->
+     {% if c in fruits_list %}
+        <p>Great! we have {{c}} today!</p>
+     {% else %}
+        <p>{{c}} is not in the list</p>
+     {% endif %}
+
+        {% extends "product.html"%}
+            {%block image%}../static/img1.png{%endblock%}
+            {%block imagetitle%}Mountain{%endblock%}
+            {%block cardinfo%}bla bla{%endblock%}
+
+
+</body>
+</html>
