@@ -15,32 +15,32 @@ class TestPlayGame(unittest.TestCase):
     def test_horizontal_win_condition(self):
         for col in range(1, 5):
             self.game.drop_chip(col)
-        self.assertTrue(self.game.check_win('X'))
+        self.assertTrue(self.game.check_win("X"))
 
     def test_vertical_win_condition(self):
         for _ in range(4):
             self.game.drop_chip(1)
-        self.assertTrue(self.game.check_win('X'))
+        self.assertTrue(self.game.check_win("X"))
 
     def test_diagonal_down_right_win(self):
-        self.game.board[5][0] = 'X'
-        self.game.board[4][1] = 'X'
-        self.game.board[3][2] = 'X'
-        self.game.board[2][3] = 'X'
-        self.assertTrue(self.game.check_win('X'))
+        self.game.board[5][0] = "X"
+        self.game.board[4][1] = "X"
+        self.game.board[3][2] = "X"
+        self.game.board[2][3] = "X"
+        self.assertTrue(self.game.check_win("X"))
 
     def test_diagonal_up_right_win(self):
-        self.game.board[2][0] = 'X'
-        self.game.board[3][1] = 'X'
-        self.game.board[4][2] = 'X'
-        self.game.board[5][3] = 'X'
-        self.assertTrue(self.game.check_win('X'))
+        self.game.board[2][0] = "X"
+        self.game.board[3][1] = "X"
+        self.game.board[4][2] = "X"
+        self.game.board[5][3] = "X"
+        self.assertTrue(self.game.check_win("X"))
 
     def test_no_win_condition(self):
         self.game.drop_chip(1)
         self.game.drop_chip(2)
         self.game.drop_chip(3)
-        self.assertFalse(self.game.check_win('X'))
+        self.assertFalse(self.game.check_win("X"))
 
     def test_full_column(self):
         for _ in range(self.game.ROWS):

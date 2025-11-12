@@ -17,11 +17,12 @@ what is function?
 
 # import Python file
 from lab5_carcamo_function import *
+
 # call function product()
 print("\n ---- example 1: intro dunction -----")
 n1 = 2
 n2 = 5
-p = product(n1,n2)
+p = product(n1, n2)
 print(f"The product of {n1} and {n2} is {p}")
 p = product()
 print(f"The product is {p}")
@@ -34,7 +35,9 @@ s2 = 3
 hyp = hypotenuse(s1, s2)
 print(f"The hypotenuse is {hyp:0.2f}")
 
-print("\n----- Example 3: function to check if the number is positive, negative or zero")
+print(
+    "\n----- Example 3: function to check if the number is positive, negative or zero"
+)
 c = check_number(-3)
 print(f"The number is {c}")
 c = check_number(5)
